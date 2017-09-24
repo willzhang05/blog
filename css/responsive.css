@@ -22,11 +22,11 @@
         top: 0;
         left: -30vw;
         padding: 0;
-        padding-top: 48px;
+        margin-top: 48px;
         position: fixed;
-        z-index: 2;
+        z-index: 3;
         transition: all 130ms ease;
-        background-color: #171717;
+        background-color: #1f1f1f;
         display: flex;
         flex-direction: column;
     }

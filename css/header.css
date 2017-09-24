@@ -1,5 +1,6 @@
 header {
     position: fixed;
+    z-index: 3;
     width: 100vw;
     height: 48px;
     top: 0;
@@ -50,9 +51,11 @@ button.menu-item:hover {
 }
 
 #menu-toggle:hover {
+    background-color: #2b2b2b;
 }
 
 #menu-toggle:active {
+    background-color: #393939;
 }
 
 #menu-toggle>i {
