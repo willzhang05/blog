@@ -1,11 +1,15 @@
 header {
-    height: 48px;
+    position: fixed;
     width: 100vw;
+    height: 48px;
+    top: 0;
     background-color: #1f1f1f;
 }
+
 #blank {
     display: none;
 }
+
 nav#menu {
     display: flex;
     height: 100%;
@@ -13,6 +17,7 @@ nav#menu {
 }
 nav#menu h2 {
     width: 18vw;
+    padding: 0 1vw;
     font-size: 1.8em;
     color: #fff;
     line-height: 48px;

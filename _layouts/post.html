@@ -18,6 +18,14 @@ type: post
 </div>
         
 <div class="pagination">
+    {% if page.previous.url %}
+        <a href="{{ page.previous.url | prepend: site.url }}">
+            <button class="previous">
+                Previous
+                <i></i>
+            </button>
+        </a>
+    {% endif %}
     {% if page.next.url %}
         <a href="{{ page.next.url | prepend: site.url }}">
             <button class="next">
@@ -26,13 +34,6 @@ type: post
             </button>
         </a>
     {% endif %}
-    {% if page.previous.url %}
-        <a href="{{ page.next.url | prepend: site.url }}">
-            <button class="next">
-                Next
-                <i></i>
-            </button>
-        </a>
-    {% endif %}
-    <a href="#" class="top">Top</a>
+</div>
+<div class="tags">
 </div>

@@ -1,6 +1,6 @@
-@media screen and (max-width: 500px) {
-    nav#menu > a {
-        display: none;
+@media screen and (max-width: 1000px) {
+    nav#menu h2 {
+        font-size: 1.3em;
     }
 }
 
@@ -36,16 +36,22 @@
     button.menu-item {
         font-size: 1.2em;
         width: 100%;
+        min-width: 100%;
         height: 10vh;
         line-height: 10vh;
     }
 }
 
-@media screen and (max-width: 1000px) {
-    nav#menu h2 {
-        font-size: 1.3em;
+@media screen and (max-width: 500px) {
+    nav#menu > h2 {
+        display: none;
+    }
+    nav#menu {
+        width: 50vw;
+        left: -50vw;
     }
 }
+
 /*@media screen and (max-width: 480px), screen and (max-height: 420px) {
     button.flip {
         display: none;

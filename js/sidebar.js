@@ -25,11 +25,11 @@ sb.style.disabled = true;
 
 
 function toggleSidebar(toggleOpenAllowed) {
-    if ((sb.style.left == "" || sb.style.left == "-30vw") && toggleOpenAllowed) {
+    if ((sb.style.left == "" || sb.style.left == "-50vw") && toggleOpenAllowed) {
         sb.style.disabled = false;
         sb.style.left = "0px";
     } else {
         sb.style.disabled = true;
-        sb.style.left = "-30vw";
+        sb.style.left = "-50vw";
     }
 }

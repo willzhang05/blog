@@ -22,14 +22,6 @@ title: Blog
 </div>
 
 <div class="pagination">
-    {% if page.previous.url %}
-        <a href="{{ page.previous.url | prepend: site.url }}">
-            <button class="previous">
-                previous
-                <i></i>
-            </button>
-        </a>
-    {% endif %}
     {% if page.next.url %}
         <a href="{{ page.next.url | prepend: site.url }}">
             <button class="next">
@@ -38,5 +30,12 @@ title: Blog
             </button>
         </a>
     {% endif %}
-    <a href="#" class="top">Top</a>
+    {% if page.previous.url %}
+        <a href="{{ page.previous.url | prepend: site.url }}">
+            <button class="previous">
+                Previous
+                <i></i>
+            </button>
+        </a>
+    {% endif %}
 </div>
