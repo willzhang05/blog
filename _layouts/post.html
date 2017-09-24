@@ -15,25 +15,31 @@ type: post
     <div class="content">
         {{ content }}
     </div>
+    <div class="tags">
+        <span>Tags:</span>
+        <ul>
+        {% for tag in page.tags %}
+            <li>
+                <a class="tag" href="/tags#{{ tag }}">{{ tag }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
 </div>
         
 <div class="pagination">
     {% if page.previous.url %}
         <a href="{{ page.previous.url | prepend: site.url }}">
             <button class="previous">
-                Previous
-                <i></i>
+                <span>Previous</span>
             </button>
         </a>
     {% endif %}
     {% if page.next.url %}
         <a href="{{ page.next.url | prepend: site.url }}">
             <button class="next">
-                Next
-                <i></i>
+                <span>Next</span>
             </button>
         </a>
     {% endif %}
-</div>
-<div class="tags">
 </div>

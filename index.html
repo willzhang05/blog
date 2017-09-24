@@ -4,37 +4,49 @@ type: home
 title: Blog
 ---
 <div class="catalog">
-    {% for post in paginator.posts %}
-    <div class="card">
-        <a href="{{ post.url | prepend: site.url }}" class="catalog-item">
-          <div class="info">
-              <h1>{{ post.title }}</h1>
-              <h2>{{ post.date | date: "%B %d, %Y" }} 
+{% for post in paginator.posts %}
+    <a href="{{ post.url | prepend: site.url }}" class="catalog-item">
+        <div class="card">
+            {% if post.preview %}
+                <div class="preview" style="background-image: url('{{ site.url }}/assets/{{ post.preview }}')">
+                </div>
+            {% endif %}
+            <div class="info">
+                <h1>{{ post.title }}</h1>
+                {% if post.tags %}
+                    <div class="tags">
+                        <span>Tags:</span>
+                        <ul>
+						{% for tag in post.tags %}
+							<li>{{ tag }}</li>
+						{% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <h2>{{ post.date | date: "%B %d, %Y" }} 
                     {% if post.author %}
                         {{ post.author }}
                     {% endif %}      
-              </h2>
-              <p>{{ post.content | truncatewords: 50 | strip_html }}</p>
-          </div>
-        </a>
-    </div>
-    {% endfor %}
+                </h2>
+                <p>{{ post.content | truncatewords: 50 | strip_html }}</p>
+            </div>
+        </div>
+    </a>
+{% endfor %}
 </div>
 
 <div class="pagination">
-    {% if page.next.url %}
-        <a href="{{ page.next.url | prepend: site.url }}">
-            <button class="next">
-                Next
-                <i></i>
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.url }}">
+            <button class="previous">
+                <span>Previous</span>
             </button>
         </a>
     {% endif %}
-    {% if page.previous.url %}
-        <a href="{{ page.previous.url | prepend: site.url }}">
-            <button class="previous">
-                Previous
-                <i></i>
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.url }}">
+            <button class="next">
+                <span>Next</span>
             </button>
         </a>
     {% endif %}

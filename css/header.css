@@ -16,8 +16,7 @@ nav#menu {
     padding: 0 2vw;
 }
 nav#menu h2 {
-    width: 18vw;
-    padding: 0 1vw;
+    padding: 0 10px;
     font-size: 1.8em;
     color: #fff;
     line-height: 48px;
@@ -36,6 +35,7 @@ button.menu-item {
     color: #fff;
     background-color: transparent;
     cursor: pointer;
+    outline: none;
 }
 button.menu-item:hover {
     text-decoration: underline;
