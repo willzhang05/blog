@@ -1,0 +1,61 @@
+header {
+    height: 48px;
+    width: 100vw;
+    background-color: #1f1f1f;
+}
+#blank {
+    display: none;
+}
+nav#menu {
+    display: flex;
+    height: 100%;
+    padding: 0 2vw;
+}
+nav#menu h2 {
+    width: 18vw;
+    font-size: 1.8em;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+}
+nav#menu a {
+    font-size: 1em;
+    color: #fff;
+    line-height: 48px;
+}
+button.menu-item {
+    width: 5vw;
+    min-width: 120px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+button.menu-item:hover {
+    text-decoration: underline;
+    background-color: #393939;
+}
+
+#menu-toggle {
+    cursor: pointer;
+    outline: none;
+    display: none;
+    background-color: transparent;
+}
+
+#menu-toggle:hover {
+}
+
+#menu-toggle:active {
+}
+
+#menu-toggle>i {
+    width: 48px;
+    height: 48px;
+    display: block;
+    background-image: url('../icons/menu.png');
+    background-size: 70% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}

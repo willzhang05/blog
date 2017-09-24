@@ -163,10 +163,8 @@ footer {
     min-height: 100vh;
     z-index: 1;
     background-color: #f2f2f2;
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
 }
 
 /*#wrapper:before {
@@ -209,23 +207,6 @@ section {
     margin: 0 0 1em 0;
     clear: both;
 }
-
-/*@media (max-height: 300px) {
-    #desc > span {
-        width: calc(100% - 1em);
-        padding: 0 0.05em;
-        font-size: 0.7em;
-        display: inline-block;
-        margin: 0.5em 0;
-        clear: both;
-    }
-    #desc > h1 {
-        font-size: 1.5em;
-    }
-    #desc > h2 {
-        font-size: 0.7em;
-    }
-}*/
 
 #contact {
     margin: 1em 0 0 0;
@@ -291,36 +272,57 @@ section {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 28px 79px 0 rgba(66,129,121,.27);
 }
-
-@media screen and (max-width: 900px) {
-    #desc {
-        left: 5vw;
-        top: 10vh;
-        width: 90vw;
-        height: 80vh;
-    }
+.catalog {
+    min-height: calc(100vh - 48px - 50px);
+    display: flex;
+    flex-direction: column;
+}
+.card {
+    margin: 12px;
+    padding: 2%;
+    min-height: 100px;
+    background-color: #fff;
+}
+.info > h1 {
+    color: #2f2f2f;
+}
+.info > h2 {
+    color: #767676;
 }
 
-@media screen and (max-width: 480px), screen and (max-height: 420px) {
-    button.flip {
-        display: none;
-    }
-    section {
-        height: 100vh;
-    }
-    #desc > h1 {
-        font-size: 2em;
-    }
-    #desc {
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-    }
+.catalog h1 {
+    font-size: 1.3em;
 }
 
-@media screen and (max-width: 225px), screen and (max-height: 420px) {
-    #desc {
-        overflow-y: auto;
-    }
+.catalog h2 {
+    font-size: 0.8em;
 }
+
+.catalog p {
+    margin: 1.3em 0;
+    color: #2f2f2f;
+}
+
+.catalog h1:hover, .catalog p:hover {
+    text-decoration: underline;
+}
+
+.post h1 {
+    font-size: 1.8em;
+}
+
+.post h2 {
+    font-size: 0.8em;
+}
+
+.post .content {
+    margin: 1.3em 0;
+}
+
+.post figure {
+    display: block;
+    max-width: 900px;
+    width: 100%;
+    margin: 2%;
+}
+

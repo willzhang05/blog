@@ -1,4 +1,42 @@
 ---
-layout: home
+layout: default
+type: home
 title: Blog
 ---
+<div class="catalog">
+    {% for post in paginator.posts %}
+    <div class="card">
+        <a href="{{ post.url | prepend: site.url }}" class="catalog-item">
+          <div class="info">
+              <h1>{{ post.title }}</h1>
+              <h2>{{ post.date | date: "%B %d, %Y" }} 
+                    {% if post.author %}
+                        {{ post.author }}
+                    {% endif %}      
+              </h2>
+              <p>{{ post.content | truncatewords: 50 | strip_html }}</p>
+          </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    {% if page.previous.url %}
+        <a href="{{ page.previous.url | prepend: site.url }}">
+            <button class="previous">
+                previous
+                <i></i>
+            </button>
+        </a>
+    {% endif %}
+    {% if page.next.url %}
+        <a href="{{ page.next.url | prepend: site.url }}">
+            <button class="next">
+                Next
+                <i></i>
+            </button>
+        </a>
+    {% endif %}
+    <a href="#" class="top">Top</a>
+</div>

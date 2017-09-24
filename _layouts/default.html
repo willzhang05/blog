@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{% include head.html %}
+</head>
+
+<body>
+    {% include header.html %}
+    <div id="wrapper" class="fluid">
+        {{ content }}
+    </div>
+    <footer>&copy; {{ site.time | date: "%Y" }} William Zhang</footer>
+    <script src="/js/sidebar.js"></script>
+</body>
+
+</html>
