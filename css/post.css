@@ -2,11 +2,13 @@
     min-height: calc(100vh - 48px - 50px);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .card {
     margin: 12px;
     min-height: 100px;
+    max-width: 750px;
     background-color: #fff;
 }
 
@@ -14,7 +16,7 @@
     width: 100%;
     height: 20vh;
     overflow: hidden;
-    background-size: 100%;
+    background-size: cover;
     background-position: center center;
 }
 
