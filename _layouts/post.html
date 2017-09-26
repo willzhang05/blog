@@ -2,44 +2,45 @@
 layout: default
 type: post
 ---
-
-<div class="post card">
-    <div class="info">
-        <h1>{{ page.title }}</h1>
-        <h2>{{ page.date | date: "%B %d, %Y" }} 
-            {% if page.author %}
-                {{ page.author }}
-            {% endif %}      
-        </h2>
+<div class="post">
+    <div class="card">
+        <div class="info">
+            <h1>{{ page.title }}</h1>
+            <h2>{{ page.date | date: "%B %d, %Y" }} 
+                {% if page.author %}
+                    {{ page.author }}
+                {% endif %}      
+            </h2>
+        </div>
+        <div class="content">
+            {{ content }}
+        </div>
+        <div class="tags">
+            <span>Tags:</span>
+            <ul>
+            {% for tag in page.tags %}
+                <li>
+                    <a class="tag" href="/tags#{{ tag }}">{{ tag }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
     </div>
-    <div class="content">
-        {{ content }}
-    </div>
-    <div class="tags">
-        <span>Tags:</span>
-        <ul>
-        {% for tag in page.tags %}
-            <li>
-                <a class="tag" href="/tags#{{ tag }}">{{ tag }}</a>
-            </li>
-        {% endfor %}
-        </ul>
-    </div>
-</div>
         
-<div class="pagination">
-    {% if page.previous.url %}
-        <a href="{{ page.previous.url | prepend: site.url }}">
-            <button class="previous">
-                <span>Previous</span>
-            </button>
-        </a>
-    {% endif %}
-    {% if page.next.url %}
-        <a href="{{ page.next.url | prepend: site.url }}">
-            <button class="next">
-                <span>Next</span>
-            </button>
-        </a>
-    {% endif %}
+    <div class="pagination">
+        {% if page.previous.url %}
+            <a href="{{ page.previous.url | prepend: site.url }}">
+                <button class="previous">
+                    <span>Previous</span>
+                </button>
+            </a>
+        {% endif %}
+        {% if page.next.url %}
+            <a href="{{ page.next.url | prepend: site.url }}">
+                <button class="next">
+                    <span>Next</span>
+                </button>
+            </a>
+        {% endif %}
+    </div>
 </div>

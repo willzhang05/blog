@@ -33,21 +33,21 @@ title: Blog
         </div>
     </a>
 {% endfor %}
-</div>
 
-<div class="pagination">
-    {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.url }}">
-            <button class="previous">
-                <span>Previous</span>
-            </button>
-        </a>
-    {% endif %}
-    {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.url }}">
-            <button class="next">
-                <span>Next</span>
-            </button>
-        </a>
-    {% endif %}
+    <div class="pagination">
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | prepend: site.url }}">
+                <button class="previous">
+                    <span>Previous</span>
+                </button>
+            </a>
+        {% endif %}
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.url }}">
+                <button class="next">
+                    <span>Next</span>
+                </button>
+            </a>
+        {% endif %}
+    </div>
 </div>
