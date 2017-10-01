@@ -5,6 +5,37 @@
     align-items: center;
 }
 
+.catalog h1 {
+    font-size: 1.3em;
+}
+
+.catalog h2 {
+    font-size: 0.8em;
+}
+
+.catalog p {
+    margin: 1.3em 0;
+    color: #2f2f2f;
+}
+
+.catalog h1:hover, .catalog p:hover {
+    text-decoration: underline;
+}
+
+.catalog > h1 {
+    width: calc(98% - 24px);
+    max-width: 960px;
+    margin: 24px;
+    display: inline-block;
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.catalog > h1:hover {
+    text-decoration: none;
+}
+
 .post {
     display: flex;
     flex-direction: column;
@@ -14,7 +45,7 @@
 .card {
     margin: 12px;
     min-height: 100px;
-    max-width: 900px;
+    max-width: 960px;
     background-color: #fff;
 }
 
@@ -24,6 +55,14 @@
     overflow: hidden;
     background-size: cover;
     background-position: center center;
+}
+
+.post p {
+    margin: 1em 0;
+}
+
+.post .preview {
+    height: 40vh;
 }
 
 .post .tags {
@@ -47,26 +86,8 @@
 .info a:visited {
     color: #2f2f2f;
 }
-
-.catalog h1 {
-    font-size: 1.3em;
-}
-
-.catalog h2 {
-    font-size: 0.8em;
-}
-
-.catalog p {
-    margin: 1.3em 0;
-    color: #2f2f2f;
-}
-
-.catalog h1:hover, .catalog p:hover {
-    text-decoration: underline;
-}
-
 .post h1 {
-    font-size: 1.8em;
+    font-size: 2em;
 }
 
 .post h2, .info .tags {

@@ -4,6 +4,10 @@ type: post
 ---
 <div class="post">
     <div class="card">
+        {% if page.preview %}
+            <div class="preview" style="background-image: url('{{ site.url }}/assets/{{ page.preview }}')">
+            </div>
+        {% endif %}
         <div class="info">
             <h1>{{ page.title }}</h1>
             <h2>{{ page.date | date: "%B %d, %Y" }} 
@@ -20,7 +24,7 @@ type: post
             <ul>
             {% for tag in page.tags %}
                 <li>
-                    <a class="tag" href="/tags#{{ tag }}">{{ tag }}</a>
+                    <a class="tag" href="/tag/{{ tag }}">{{ tag }}</a>
                 </li>
             {% endfor %}
             </ul>

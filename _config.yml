@@ -24,6 +24,11 @@ github_username:  willzhang05
 paginate: 5
 paginate_path: "/page:num"
 
+tag_page_layout: tag_feed
+tag_page_dir: tag
+tag_feed_layout: tag_feed
+tag_feed_dir: tag
+tag_permalink_style: pretty
 # Build settings
 markdown: kramdown
 plugins:
