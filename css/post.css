@@ -14,7 +14,7 @@
 }
 
 .catalog p {
-    margin: 1.3em 0;
+    margin: 1em 0;
     color: #2f2f2f;
 }
 
@@ -45,6 +45,7 @@
 .card {
     margin: 12px;
     min-height: 100px;
+    width: calc(100vw - 24px);
     max-width: 960px;
     background-color: #fff;
 }
@@ -66,15 +67,40 @@
 }
 
 .post .tags {
-    padding: 0.5% 2% 2% 2%;
+    padding: 1vw 2vw 2vw 2vw;
 }
 
 .info {
-    padding: 2% 2% 0.5% 2%;
+    padding: 2vw 2vw 1vw 2vw;
 }
 
 .content {
-    padding: 0 2%;
+    padding: 0 2vw;
+}
+
+.content h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.content h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.content img {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    margin: 2% 0;
+}
+
+.content ul {
+    margin-left: 4%;
+}
+
+.content code {
+    font-family: Consolas, monospace;
 }
 
 .info > h1 {
@@ -94,12 +120,12 @@
     font-size: 0.8em;
 }
 
-.post figure {
+/*.post figure {
     display: block;
     max-width: 98%;
     width: 100%;
     margin: 1% 0 1% 2%;
-}
+}*/
 
 .pagination {
     position: relative;
@@ -182,6 +208,7 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .tags li {

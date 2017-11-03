@@ -50,6 +50,8 @@
         width: 50vw;
         left: -50vw;
     }
+    .card {
+    }
 }
 
 /*@media screen and (max-width: 480px), screen and (max-height: 420px) {
