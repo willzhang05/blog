@@ -50,7 +50,19 @@
         width: 50vw;
         left: -50vw;
     }
-    .card {
+    .catalog .info {
+        padding: 5vw;
+    }
+    .post .info {
+        padding: 1vw 5vw 0 5vw;
+    }
+    .content {
+        padding: 0 5vw;
+    }
+    .catalog .tags {
+    }
+    .post .tags {
+        padding: 5vw;
     }
 }
 

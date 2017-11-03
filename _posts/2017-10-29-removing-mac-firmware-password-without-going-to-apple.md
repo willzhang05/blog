@@ -8,8 +8,6 @@ tags: mac efi firmware hack password apple rpi spi electronics
 
 According to Apple, the only way to remove an unknown firmware password from a MacBook (2011 and later) is to take it to the Apple Store with the original proof-of-purchase. However, I've found that there is another way, which I've been successful with--it's essentially just modifying a couple bytes in the EFI ROM, which should be simple. What's not simple, however, is figuring out how to read and write to the EFI chip. In this post, I'll talk about the process that I figured out and what worked for me.
 
-
-
 ### The Official Method ###
 Apple's method of resetting the firmware password is not reproducible, as Apple generates an SCBO file that unlocks the EFI using their private key. You can read more about this process [here](https://reverse.put.as/2016/06/25/apple-efi-firmware-passwords-and-the-scbo-myth). The problem with this system is that, if you are in the unfortunate situation of neither having the firmware unlock password nor the original proof of purchase, you have no other options. This is understandable from Apple's viewpoint, as it can deter theft; once the Mac is stolen, the thief cannot reimage the computer, making it useless. Many threads on the Internet show that this situation is often not a result of theft, however. For instance, one commenter on a thread I read explained that a family member had gifted the system to them, but no longer remembered the password nor had the receipt, leaving no options to reuse the computer.
 
@@ -35,13 +33,10 @@ The post on the [Rossmann Group forum](https://www.rossmanngroup.com/boards/foru
 I've bored you enough with the story, let's get to the exciting part. I'll describe the method that worked for me; it may be somewhat different on your particular MacBook. I am also not responsible for any bricked Macs this may result in, **do this at your own risk with the possibility of a bricked Mac in mind**.
 
 #### Stuff you'll need
-
 - A way to connect to the Raspberry Pi -- I used SSH, but serial can work as well.
 - Hex editor -- I recommend [HxD](https://mh-nexus.de/en/hxd/) if you're using Windows.
 - Raspberry Pi -- I used a Pi 3 Model B with Raspbian 8.
 - Flashrom -- This is a package in the Raspbian repositories, so you can install it with apt.
-
-
 - Some jumper wires -- Many thanks to my friend Liam, who provided me with some.
 - Breadboard -- Had this sitting around.
 - A couple low resistance resistors -- I used 150Ω.
@@ -49,7 +44,6 @@ I've bored you enough with the story, let's get to the exciting part. I'll descr
 - SOIC 8-pin clip -- This is probably the most important out of all the components, you'll want something quality that can make a solid connection with the pins of the EFI chip. I used a [Pomona 5250](https://www.amazon.com/CPT-063-Test-Clip-SOIC8-Pomona/dp/B00HHH65T4).
 
 #### Setup
-
 First, we'll need to verify that we can interface with the EFI flash chip at all. To get to the chip, you'll need to disassemble your MacBook to the point where you can see the top side of the logic board and identify the chip. On the A1286, the chip is located near the SD card reader and speaker. The chip will be fairly large and have eight pins.
 
 ![img](https://i.imgur.com/EDn5TwM.jpg)
@@ -62,15 +56,11 @@ First we'll need to set up the Raspberry Pi to function as an SPI programmer. To
 $ apt install flashrom
 {% endhighlight %}
 
-
-
 ![img](https://i.imgur.com/EAXwlfw.jpg)Next, follow the above schematic from the [Rossmann Group forum post](https://www.rossmanngroup.com/boards/forum/board-repair-troubleshooting/2455-how-to-read-write-erase-apple-efi-spi-rom-with-raspberry-pi) to connect the Raspberry Pi GPIO pins to the SOIC clip, then clip onto the chip on the logic board. As far as I know, the pinout should be identical for all Mac EFI flash chips, but be sure to check the specific datasheet for your chip and modify the wiring as needed.
 
 ![img](https://lh3.googleusercontent.com/-_vqWZZHRR1a17qWbvNhXLqJuDrwzPVHT5HbJ_Y_-DTKEbgL7SCF8G6oaZ3NBE7JobLtAyuHPkEiBAqOhRM7uemscv4LD-ZndKfpK9K5cYR2m3DgfFC6oMkqehojjlQBSbI8dZq0Si4PC6YbuRVYDNM7qeWfHa75RXpildmnDVeaAcR7qvjsD7bTbbqdWzeRimkWaCbK_icWHVlJwU5MfFB1iFx_0WNlo-9dVKq_BPKupvtUJzj4Dgd0CmdiTn5IfC4RDw5myr8WInlQQfmrkMg1Dj-RevsKepBf-m3dt8gGWP84FaBn7SWPiZiMsm6xw4GLA50Asrkk3p69DAqXnOjPMgzEyuLTTaoO3RG1_rrM7LGvNcwNv_5AY2JaL6gc2ijVDrkoNyGtOQ0vfXyP6K5SQuxewE7Sy4yY6wYShHCbxn-k5A6qtoU-MeT80B1wIOU6tTncRnCihwEKgomkX8rdo8N2G1ZS2Nt2TesAuzILwHcEMSwMNy9JC2_pAHPO6DlIwIzXtcKqUKKgKFoe39A7KN0GVOkatrUTrecJl1waubUbUa2FoBEX113Sd0mLQtkkP5uoCkp6fSO_i02o3tyGFq9glx4HZv0Gijfc3EwEiAZckJykshvWUMnykQlxrqfLJIqzvzPupkzOYJtlo0AlnxkU9ZNLt6Y=w1200-h900-no)
 
 This is what my setup looked like.
-
-
 
 {% highlight bash %}
 $ modprobe spi_bcm2835
