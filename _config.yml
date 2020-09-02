@@ -31,9 +31,11 @@ tag_feed_dir: tag
 tag_permalink_style: pretty
 # Build settings
 markdown: kramdown
-plugins:
+plugins_dir:
   - jekyll-feed
   - jekyll-paginate
+
+gems: [jekyll-paginate]
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
