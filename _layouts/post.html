@@ -24,7 +24,7 @@ type: post
             <ul>
             {% for tag in page.tags %}
                 <li>
-                    <a class="tag" href="/tag/{{ tag }}">{{ tag }}</a>
+                    <a class="tag" href="{{ site.url }}/tag/{{ tag }}">{{ tag }}</a>
                 </li>
             {% endfor %}
             </ul>

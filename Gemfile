@@ -27,3 +27,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Added at 2017-09-24 11:10:16 -0400 by williamzhang:
 gem "jekyll-paginate", "~> 1.1"
 gem "jekyll-tagging", "~> 1.1"
+
+gem "public_suffix", "~> 3.0"
